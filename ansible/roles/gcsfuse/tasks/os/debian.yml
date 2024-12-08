@@ -27,19 +27,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: Add Gcsfuse Repository Key 1
-  apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-    state: present
-
-- name: Add Gcsfuse Repository
-  ansible.builtin.apt_repository:
-    repo: deb https://packages.cloud.google.com/apt gcsfuse-{{ansible_distribution_release}} main
-    filename: gcsfuse
-    update_cache: true
-    state: present
-
 - name: Install Gcsfuse
-  ansible.builtin.apt:
-    name: gcsfuse
-    state: present
+  ansible.builtin.script: /slurm-gcp/install-gcsfuse.sh
+
+    #- name: Add Gcsfuse Repository Key 1
+    #  apt_key:
+    #    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    #    state: present
+    #
+    #- name: Add Gcsfuse Repository
+    #  ansible.builtin.apt_repository:
+    #    repo: deb https://packages.cloud.google.com/apt gcsfuse-{{ansible_distribution_release}} main
+    #    filename: gcsfuse
+    #    update_cache: true
+    #    state: present
+    #
+    #- name: Install Gcsfuse
+    #  ansible.builtin.apt:
+    #    name: gcsfuse
+    #    state: present

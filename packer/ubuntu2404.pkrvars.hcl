@@ -29,7 +29,7 @@ zone       = "us-central1-b"
 source_image_project_id = "ubuntu-os-cloud"
 
 #source_image        = null
-source_image_family = "ubuntu-minimal-2204-lts"
+source_image_family = "ubuntu-2404-lts-amd64"
 
 disk_type = "pd-standard"
 disk_size = 32
@@ -48,7 +48,7 @@ tags = [
 #############
 
 # example slurm_version
-# slurm_version = "23.11.6"
+slurm_version = "25.05.5"
 
 # Disable some ansible roles here; they are enabled by default
 # install_cuda = false

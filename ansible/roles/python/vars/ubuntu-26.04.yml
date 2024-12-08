@@ -13,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-lmod_git_url: https://github.com/TACC/Lmod.git
-lmod_version: 8.7.53
-lmod_paths:
-  build: '{{paths.apps}}/lmod/{{lmod_version}}'
-  src: '{{paths.apps}}/lmod/src'
+python_packages:
+- python3
+- python3-pip
+- python3-setuptools
+- python3-virtualenv

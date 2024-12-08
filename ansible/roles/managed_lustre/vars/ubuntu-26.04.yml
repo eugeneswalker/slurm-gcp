@@ -1,5 +1,5 @@
 ---
-# Copyright (C) SchedMD LLC.
+# Copyright 2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-lmod_git_url: https://github.com/TACC/Lmod.git
-lmod_version: 8.7.53
-lmod_paths:
-  build: '{{paths.apps}}/lmod/{{lmod_version}}'
-  src: '{{paths.apps}}/lmod/src'
+managed_lustre_repo_url: https://us-apt.pkg.dev/projects/lustre-client-binaries
+managed_lustre_packages:
+- lustre-client-modules-{{ ansible_kernel }}
+- lustre-client-utils

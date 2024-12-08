@@ -31,14 +31,14 @@ slurm_paths:
 
 slurm_user:
   user: slurm
-  uid: 981
+  uid: 9981
   group: slurm
-  gid: 981
+  gid: 9981
 slurmrestd_user:
   user: slurmrestd
-  uid: 982
+  uid: 9982
   group: slurmrestd
-  gid: 982
+  gid: 9982
 
 slurmd_override_path: /etc/systemd/system/slurmd.service.d/overrides.conf
 sackd_override_path: /etc/systemd/system/sackd.service.d/override.conf

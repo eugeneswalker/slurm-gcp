@@ -62,7 +62,7 @@
     install_gcsfuse: true
     install_gcsfuse_spank: false
     install_pmix: true
-    install_pyxis: true
+    install_pyxis: false
     allow_kernel_upgrades: true
 
   pre_tasks:
@@ -117,9 +117,9 @@
   - name: Check Support on Ubuntu
     when: ansible_distribution == "Ubuntu"
     ansible.builtin.assert:
-      that: ansible_distribution_version is version('20.04', '==') or ansible_distribution_version is version('22.04', '==') or ansible_distribution_version is version('24.04', '==')
+      that: ansible_distribution_version is version('20.04', '==') or ansible_distribution_version is version('22.04', '==') or ansible_distribution_version is version('24.04', '==') or ansible_distribution_version is version('26.04', '==')
       fail_msg: |
-        When building Slurm-GCP on Ubuntu, use release 20.04/22.04/24.04
+        When building Slurm-GCP on Ubuntu, use release 20.04/22.04/24.04/26.04
   - name: Check Lustre Install Options
     ansible.builtin.assert:
       that: not (install_lustre and install_managed_lustre)

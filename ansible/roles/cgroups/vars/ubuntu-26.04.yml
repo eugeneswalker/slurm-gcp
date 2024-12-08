@@ -13,8 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-lmod_git_url: https://github.com/TACC/Lmod.git
-lmod_version: 8.7.53
-lmod_paths:
-  build: '{{paths.apps}}/lmod/{{lmod_version}}'
-  src: '{{paths.apps}}/lmod/src'
+cgroup_packages:
+- libcgroup3
+- libcgroup-dev
+- libpam-cgroup
+- libdbus-1-dev
+
+cgroup_grub_cmdline_linux:
+- systemd.unified_cgroup_hierarchy=1
+- cgroup_enable=memory
+- swapaccount=1

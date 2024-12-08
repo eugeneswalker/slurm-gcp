@@ -1,5 +1,5 @@
 ---
-# Copyright (C) SchedMD LLC.
+# Copyright 2024 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-lmod_git_url: https://github.com/TACC/Lmod.git
-lmod_version: 8.7.53
-lmod_paths:
-  build: '{{paths.apps}}/lmod/{{lmod_version}}'
-  src: '{{paths.apps}}/lmod/src'
+pmix_dependencies:
+- libevent-dev
+- libhwloc-dev
