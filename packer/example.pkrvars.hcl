@@ -16,7 +16,7 @@
 # GENERAL #
 ###########
 
-project_id = "<PROJECT_ID>"
+project_id = "paratools-pro"
 zone       = "us-central1-a"
 
 # prefix = null
@@ -26,14 +26,14 @@ zone       = "us-central1-a"
 #########
 
 # NOTE: Your Project ID will be automatically appended
-source_image_project_id = "cloud-hpc-image-public"
+source_image_project_id = "ubuntu-os-cloud"
 
 #source_image        = null
-source_image_family = "hpc-centos-7"
+source_image_family = "ubuntu-minimal-2204-lts"
 
-# disk_type = "pd-standard"
-# disk_size = 32
-# machine_type = "n1-standard-16"
+disk_type = "pd-standard"
+disk_size = 32
+machine_type = "n1-standard-16"
 
 tags = [
   # "tag0",
