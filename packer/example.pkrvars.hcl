@@ -16,8 +16,8 @@
 # GENERAL #
 ###########
 
-project_id = "<PROJECT_ID>"
-zone       = "us-central1-a"
+project_id = "paratools-pro"
+zone       = "us-central1-b"
 
 # prefix = null
 
@@ -26,14 +26,14 @@ zone       = "us-central1-a"
 #########
 
 # NOTE: Your Project ID will be automatically appended
-source_image_project_id = "cloud-hpc-image-public"
+source_image_project_id = "ubuntu-os-cloud"
 
 #source_image        = null
-source_image_family = "hpc-centos-7"
+source_image_family = "ubuntu-minimal-2204-lts"
 
-# disk_type = "pd-standard"
-# disk_size = 32
-# machine_type = "n1-standard-16"
+disk_type = "pd-standard"
+disk_size = 32
+machine_type = "n1-standard-16"
 
 tags = [
   # "tag0",
@@ -58,7 +58,7 @@ tags = [
 
 ### Service Account ###
 
-service_account_email = "default"
+service_account_email = "default" #"lpeyrala@paratools.com"
 
 service_account_scopes = [
   "https://www.googleapis.com/auth/cloud-platform",
@@ -82,3 +82,5 @@ extra_ansible_provisioners = [
 ]
 
 # More options are listed in the variables.pkr.hcl
+
+monitoring_agent = "cloud-ops"
