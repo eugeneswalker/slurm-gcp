@@ -166,6 +166,13 @@
 
   when: cuda_runfile_driver and not cuda_driver_installed
 
+  rescue:
+  - name: Capture log
+    ansible.builtin.copy:
+      src: /var/log/nvidia-installer.log
+      dest: /tmp/nvidia-installer.log
+      remote_src: yes
+
 - name: Remove installer
   file:
     path: /tmp/cuda_runfile
