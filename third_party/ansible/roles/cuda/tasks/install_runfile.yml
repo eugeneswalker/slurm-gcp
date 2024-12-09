@@ -121,6 +121,22 @@
   register: cuda_toolkit_install_out
   when: cuda_runfile_toolkit and not cuda_toolkit_installed
 
+- name: Install GNU 12 compiler
+  ansible.builtin.apt:
+    name:
+    - gcc-12
+    - g++-12
+    - gfortran-12
+    state: present
+  when: ansible_pkg_mgr == "apt"
+
+- name: Set GNU 12 as default compiler with update-alternatives
+  command:
+    argv:
+    - update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 30
+    - update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 30
+    - update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-12 30
+
 - name: Install driver
   block:
 
