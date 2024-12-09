@@ -168,10 +168,15 @@
 
   rescue:
   - name: Capture log
-    ansible.builtin.copy:
+    ansible.builtin.fetch:
       src: /var/log/nvidia-installer.log
       dest: /tmp/nvidia-installer.log
       remote_src: yes
+  - name: Exit
+    command:
+      argv:
+      - bash
+      - exit 1
 
 - name: Remove installer
   file:
