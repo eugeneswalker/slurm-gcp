@@ -130,12 +130,24 @@
     state: present
   when: ansible_pkg_mgr == "apt"
 
-- name: Set GNU 12 as default compiler with update-alternatives
-  command:
-    argv:
-    - update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 30
-    - update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 30
-    - update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-12 30
+- name: Set GNU 12 as default C compiler
+  alternatives:
+    name: gcc
+    link: /usr/bin/gcc
+    path: /usr/bin/gcc-12
+    priority: 30
+- name: Set GNU 12 as default C++ compiler
+  alternatives:
+    name: g++
+    link: /usr/bin/g++
+    path: /usr/bin/g++-12
+    priority: 30
+- name: Set GNU 12 as default Fortran compiler
+  alternatives:
+    name: gfortran
+    link: /usr/bin/gfortran
+    path: /usr/bin/gfortran-12
+    priority: 30
 
 - name: Install driver
   block:
