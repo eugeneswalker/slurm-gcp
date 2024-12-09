@@ -84,12 +84,12 @@ source "googlecompute" "image" {
   image_labels      = var.labels
 
   ### ssh ###
-  ssh_username              = var.ssh_username
-  ssh_password              = var.ssh_password
-  ssh_clear_authorized_keys = true
-  use_iap                   = var.use_iap
-  use_os_login              = var.use_os_login
-  temporary_key_pair_type   = "ed25519"
+  ssh_username              = "ubuntu" # var.ssh_username
+  #ssh_password              = var.ssh_password
+  #ssh_clear_authorized_keys = true
+  #use_iap                   = var.use_iap
+  #use_os_login              = var.use_os_login
+  #temporary_key_pair_type   = "ed25519"
   #temporary_key_pair_bits   = 0
 
   ### instance ###
@@ -101,6 +101,9 @@ source "googlecompute" "image" {
   ### disk ###
   disk_size = var.disk_size
   disk_type = var.disk_type
+
+  accelerator_type = "projects/paratools-pro/zones/us-central1-b/acceleratorTypes/nvidia-tesla-t4"
+  accelerator_count = 1
 
   on_host_maintenance = var.on_host_maintenance
 

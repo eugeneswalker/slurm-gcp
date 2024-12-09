@@ -17,7 +17,7 @@
 ###########
 
 project_id = "paratools-pro"
-zone       = "us-central1-a"
+zone       = "us-central1-b"
 
 # prefix = null
 
@@ -58,7 +58,7 @@ tags = [
 
 ### Service Account ###
 
-service_account_email = "lpeyrala@paratools.com"
+service_account_email = "default" #"lpeyrala@paratools.com"
 
 service_account_scopes = [
   "https://www.googleapis.com/auth/cloud-platform",
