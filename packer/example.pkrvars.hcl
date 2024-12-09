@@ -82,3 +82,5 @@ extra_ansible_provisioners = [
 ]
 
 # More options are listed in the variables.pkr.hcl
+
+monitoring_agent = "cloud-ops"
